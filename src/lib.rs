@@ -270,6 +270,13 @@ pub mod arch {
     extern fn get_host_gicr_base() -> crate::memory::PhysAddr;
 }
 
+#[api_mod]
+/// Device related API.
+pub mod device {
+    /// Translate a guest physical address to a host physical address.
+    extern fn translate_gpa(gpa: usize) -> Option<usize>;
+}
+
 #[doc(hidden)]
 pub mod __priv {
     pub mod crate_interface {
