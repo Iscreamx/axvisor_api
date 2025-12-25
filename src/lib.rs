@@ -274,7 +274,7 @@ pub mod arch {
 /// Device related API.
 pub mod device {
     /// Translate a guest physical address to a host physical address.
-    extern fn translate_gpa(gpa: usize) -> Option<usize>;
+    extern fn translate_gpa(gpa: usize) -> Option<(usize, usize)>;
 }
 
 #[doc(hidden)]
